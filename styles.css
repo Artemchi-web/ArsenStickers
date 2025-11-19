@@ -1,0 +1,287 @@
+:root {
+  /* Основные цвета */
+  --color-bg: #fdfdfd;
+  --color-text: #222;
+
+  /* Палитра */
+  --color-dark: #111;
+  --color-light: #fff;
+  --color-accent: #ffcc00;
+  --color-secondary: #ff6699;
+  --color-gray: #eee;
+
+  /* Дополнительно для теней и границ */
+  --color-border: var(--color-dark);
+  --color-shadow: var(--color-dark);
+}
+
+/* Общие настройки */
+body {
+  margin: 0;
+  font-family: 'Press Start 2P', cursive;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Навигация */
+.header {
+  background: var(--color-dark);
+  color: var(--color-light);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1rem;
+  color: var(--color-accent);
+  text-decoration: none;
+  margin-right: auto;
+}
+
+.nav__link {
+  color: var(--color-light);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav__link:hover {
+  color: var(--color-accent);
+}
+
+/* Кнопки */
+.btn.pixel {
+  background: var(--color-accent);
+  color: var(--color-dark);
+  padding: 0.6rem 1rem;
+  text-decoration: none;
+  border: 2px solid var(--color-border);
+  box-shadow: 3px 3px 0 var(--color-shadow);
+  transition: transform 0.2s;
+}
+
+.btn.pixel:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--color-shadow);
+}
+
+/* Бургер */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.burger__bar {
+  width: 25px;
+  height: 3px;
+  background: var(--color-light);
+  transition: all 0.3s ease;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-secondary));
+  color: var(--color-dark);
+}
+
+.hero__title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero__subtitle {
+  margin: 1rem 0;
+}
+
+.sticker {
+  max-width: 200px;
+  margin: 1rem auto;
+  display: block;
+}
+
+/* Секции */
+.section {
+  padding: 3rem 1rem;
+}
+
+.section__title {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.section__text {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Стикеры */
+.stickers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.sticker-card {
+  background: var(--color-light);
+  border: 2px solid var(--color-border);
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 4px 4px 0 var(--color-shadow);
+}
+
+.sticker-price {
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.sticker-desc {
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+}
+
+/* Отзывы */
+.reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.review {
+  background: var(--color-gray);
+  padding: 1rem;
+  border-left: 4px solid var(--color-accent);
+}
+
+/* FAQ */
+.faq__item {
+  margin-bottom: 1rem;
+}
+
+.faq__q {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.faq__a {
+  margin-top: 0.5rem;
+}
+
+/* Footer */
+.footer {
+  background: var(--color-dark);
+  color: var(--color-light);
+  padding: 2rem 1rem;
+}
+
+.footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.footer__brand {
+  font-size: 0.8rem;
+}
+
+.footer__nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer__link {
+  color: var(--color-light);
+  text-decoration: none;
+}
+
+.footer__link:hover {
+  color: var(--color-accent);
+}
+
+.footer__cta {
+  background: var(--color-accent);
+  color: var(--color-dark);
+}
+
+/* Анимации */
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+  .burger {
+    display: flex;
+  }
+  .mobile {
+    background: var(--color-dark);
+    padding: 1rem;
+  }
+  .mobile__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .mobile__link {
+    color: var(--color-light);
+    text-decoration: none;
+  }
+}
+
+/* Бургер активный */
+.burger.active .burger__bar:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.burger.active .burger__bar:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.active .burger__bar:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+a{
+  color: var(--color-bg);
+  
+}
